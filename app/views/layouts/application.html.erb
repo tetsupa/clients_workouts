@@ -1,12 +1,21 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>ClientWorkouts</title>
+  <title>ClientWorkouts: <%= controller.action_name %></title>
   <%= stylesheet_link_tag :all %>
   <%= javascript_include_tag :defaults %>
   <%= csrf_meta_tag %>
 </head>
 <body>
+
+<span style="text-align: right">
+  <% form_tag "/client_wakouts/find" do %>
+    <%= text_field_tag :search_string %>
+    <%= submit_tag "Search" %>
+  <% end %>
+</span>
+
+<p style="color: green"><% flash[:notice] %></p>
 
 <%= yield %>
 
