@@ -82,6 +82,6 @@ class ClientWorkoutsController < ApplicationController
   end
 
   def find
-    puts params[:search_string]
+    @client_workout = ClientWorkout.find_all_by_client_name(params[:search_string])
   end
 end
