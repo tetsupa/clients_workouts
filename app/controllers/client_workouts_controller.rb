@@ -80,4 +80,8 @@ class ClientWorkoutsController < ApplicationController
       format.xml  { head :ok }
     end
   end
+
+  def find
+    puts params[:search_string]
+  end
 end
